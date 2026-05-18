@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy Policy – Pantry Pal</title>
+  <style>
+    :root {
+      --navy:       #0f1e3d;
+      --primary:    #1a3a7a;
+      --accent:     #4a7fff;
+      --accent-mid: #7aaeff;
+      --bg:         #f5f7fc;
+      --card:       #ffffff;
+      --text:       #1a2540;
+      --muted:      #5c6a8a;
+      --border:     #d4ddf0;
+      --radius:     14px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(15, 30, 61, 0.96);
+      backdrop-filter: blur(8px);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 40px;
+      height: 60px;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .nav-brand {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: #e8f0ff;
+      text-decoration: none;
+      letter-spacing: 0.01em;
+    }
+
+    .nav-link {
+      font-size: 0.9rem;
+      color: #8aaae8;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .nav-link:hover { color: #e8f0ff; }
+
+    /* ── HERO STRIP ── */
+    .hero-strip {
+      background: linear-gradient(135deg, var(--navy) 0%, var(--primary) 100%);
+      padding: 64px 40px 48px;
+      text-align: center;
+      color: #e8f0ff;
+    }
+
+    .hero-strip h1 {
+      font-size: clamp(1.8rem, 4vw, 2.6rem);
+      font-weight: 800;
+      margin-bottom: 10px;
+      letter-spacing: -0.02em;
+    }
+
+    .hero-strip p {
+      font-size: 1rem;
+      color: #8aaae8;
+      max-width: 520px;
+      margin: 0 auto;
+    }
+
+    /* ── CONTENT ── */
+    .content {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 56px 24px 80px;
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 36px 40px;
+      margin-bottom: 24px;
+      box-shadow: 0 2px 12px rgba(26,58,122,0.06);
+    }
+
+    .card-title {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 14px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .card-title .icon {
+      width: 32px;
+      height: 32px;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1rem;
+      flex-shrink: 0;
+    }
+
+    .card p { color: var(--muted); font-size: 0.97rem; margin-bottom: 12px; }
+    .card p:last-child { margin-bottom: 0; }
+
+    .card ul {
+      color: var(--muted);
+      font-size: 0.97rem;
+      padding-left: 20px;
+      margin-top: 8px;
+    }
+
+    .card ul li { margin-bottom: 6px; }
+
+    .effective-date {
+      display: inline-block;
+      background: #eef2ff;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 6px 14px;
+      font-size: 0.85rem;
+      color: var(--primary);
+      font-weight: 600;
+      margin-bottom: 32px;
+    }
+
+    h2 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin: 40px 0 20px;
+      padding-bottom: 8px;
+      border-bottom: 2px solid #e0e8f8;
+    }
+
+    .highlight-box {
+      background: #eef2ff;
+      border: 1px solid #c8d8ff;
+      border-radius: var(--radius);
+      padding: 20px 24px;
+      margin-bottom: 28px;
+      color: var(--primary);
+      font-size: 0.95rem;
+      font-weight: 500;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--navy);
+      color: #8aaae8;
+      text-align: center;
+      padding: 32px 24px;
+      font-size: 0.88rem;
+    }
+
+    footer a { color: var(--accent-mid); text-decoration: none; }
+    footer a:hover { color: #e8f0ff; }
+
+    @media (max-width: 600px) {
+      nav { padding: 0 20px; }
+      .hero-strip { padding: 48px 20px 36px; }
+      .card { padding: 24px 20px; }
+      .content { padding: 36px 16px 64px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a class="nav-brand" href="../index.html">Pantry Pal</a>
+    <a class="nav-link" href="../index.html">← Back to home</a>
+  </nav>
+
+  <!-- HERO STRIP -->
+  <div class="hero-strip">
+    <h1>Privacy Policy</h1>
+    <p>Pantry Pal is built with your privacy at its core. Here is exactly what we collect, store, and never do.</p>
+  </div>
+
+  <!-- CONTENT -->
+  <main class="content">
+
+    <span class="effective-date">Effective date: 17 May 2026</span>
+
+    <div class="highlight-box">
+      <strong>Short version:</strong> Pantry Pal stores everything on your device. We do not collect personal data, do not run a backend server, and do not share anything with third parties for advertising purposes.
+    </div>
+
+    <!-- 1. Who we are -->
+    <div class="card">
+      <div class="card-title">
+        <div class="icon" style="background:#eef2ff;">👋</div>
+        1. Who We Are
+      </div>
+      <p>Pantry Pal is an independent mobile application for meal planning, pantry management, and smart shopping lists. The app is developed and maintained by an individual developer ("we", "us", or "our").</p>
+      <p>If you have any questions about this policy, you can reach us at <a href="mailto:cmcdevitt167@gmail.com" style="color:var(--accent);">cmcdevitt167@gmail.com</a>.</p>
+    </div>
+
+    <!-- 2. Information we collect -->
+    <div class="card">
+      <div class="card-title">
+        <div class="icon" style="background:#e8f8ee;">📋</div>
+        2. Information We Collect
+      </div>
+      <p>Pantry Pal is a <strong>fully offline application</strong>. All data you enter is stored locally on your device using SQLite and is never transmitted to any server we operate.</p>
+      <p>The data stored locally includes:</p>
+      <ul>
+        <li>Recipes you browse and mark as favourites</li>
+        <li>Ingredients and quantities in your pantry stock</li>
+        <li>Your meal calendar and planned meals</li>
+        <li>Your shopping list and trolley state</li>
+        <li>App preferences such as theme, sort order, and filter selections</li>
+      </ul>
+      <p>None of this information leaves your device unless you explicitly share it (for example, using the Share List feature, which uses your device's native share sheet).</p>
+    </div>
+
+    <!-- 3. Information we do NOT collect -->
+    <div class="card">
+      <div class="card-title">
+        <div class="icon" style="background:#fff4e8;">🚫</div>
+        3. Information We Do Not Collect
+      </div>
+      <p>We do not collect, store, or transmit:</p>
+      <ul>
+        <li>Your name, email address, or any account credentials</li>
+        <li>Device identifiers, advertising IDs, or tracking tokens</li>
+        <li>Location data</li>
+        <li>Usage analytics or crash reports sent to our servers</li>
+        <li>Contacts, camera, microphone, or other sensitive device data</li>
+      </ul>
+      <p>The app does not require an account to use, and there is no sign-in or registration flow.</p>
+    </div>
+
+    <!-- 4. Third-party services -->
+    <div class="card">
+      <div class="card-title">
+        <div class="icon" style="background:#f0eeff;">🔗</div>
+        4. Third-Party Services
+      </div>
+      <p>The app may load certain images from <strong>Unsplash</strong> (unsplash.com) to display recipe photography. When an image is loaded, your device makes a standard HTTPS request to Unsplash's servers. Unsplash's own <a href="https://unsplash.com/privacy" target="_blank" rel="noopener" style="color:var(--accent);">privacy policy</a> applies to those requests. We do not pass any personal information to Unsplash.</p>
+      <p>The app is built with <strong>Expo</strong> and <strong>React Native</strong>. The runtime libraries themselves do not collect personal data on our behalf.</p>
+      <p>We do not integrate any advertising networks, social media SDKs, or analytics platforms.</p>
+    </div>
+
+    <!-- 5. Permissions -->
+    <div class="card">
+      <div class="card-title">
+        <div class="icon" style="background:#fff0f0;">🔐</div>
+        5. Device Permissions
+      </div>
+      <p>Pantry Pal requests only the permissions necessary for its features:</p>
+      <ul>
+        <li><strong>Internet access</strong> — used solely to load recipe images from Unsplash. No personal data is sent.</li>
+      </ul>
+      <p>The app does not request access to your camera, microphone, contacts, location, photos library, or any other sensitive system resource.</p>
+    </div>
+
+    <!-- 6. Data storage and security -->
+    <div class="card">
+      <div class="card-title">
+        <div class="icon" style="background:#e8f8ee;">🗄️</div>
+        6. Data Storage and Security
+      </div>
+      <p>All app data is stored in a SQLite database in your device's private application sandbox. This storage area is:</p>
+      <ul>
+        <li>Inaccessible to other apps on your device</li>
+        <li>Backed up as part of your device's standard app backup (iCloud on iOS, Google Backup on Android) unless you have disabled app backups in your device settings</li>
+        <li>Deleted automatically when you uninstall the app</li>
+      </ul>
+      <p>Because we do not operate a server and receive no data from the app, we cannot experience a server-side data breach affecting your information.</p>
+    </div>
+
+    <!-- 7. Children -->
+    <div class="card">
+      <div class="card-title">
+        <div class="icon" style="background:#fff4e8;">👨‍👩‍👧</div>
+        7. Children's Privacy
+      </div>
+      <p>Pantry Pal is not directed at children under the age of 13. We do not knowingly collect personal information from children. If you believe a child under 13 has provided personal information through the feedback feature, please contact us so we can delete it.</p>
+    </div>
+
+    <!-- 8. Feedback -->
+    <div class="card">
+      <div class="card-title">
+        <div class="icon" style="background:#eef2ff;">💬</div>
+        8. Feedback
+      </div>
+      <p>The in-app feedback feature allows you to send a message to us via your device's email client. If you use this feature, your email address and the content of your message will be visible to us so we can respond. We will not use your email address for any marketing purpose and will not share it with third parties.</p>
+      <p>Sending feedback is entirely optional.</p>
+    </div>
+
+    <!-- 9. Changes -->
+    <div class="card">
+      <div class="card-title">
+        <div class="icon" style="background:#f0eeff;">🔄</div>
+        9. Changes to This Policy
+      </div>
+      <p>If we make material changes to this privacy policy, we will update the effective date at the top of this page and, where appropriate, provide notice within the app. We encourage you to review this page periodically.</p>
+      <p>Continued use of Pantry Pal after changes are posted constitutes your acceptance of the updated policy.</p>
+    </div>
+
+    <!-- 10. Contact -->
+    <div class="card">
+      <div class="card-title">
+        <div class="icon" style="background:#e8f8ee;">✉️</div>
+        10. Contact Us
+      </div>
+      <p>If you have questions, concerns, or requests relating to this privacy policy or your data, please contact:</p>
+      <p><strong>Pantry Pal</strong><br />
+      Email: <a href="mailto:cmcdevitt167@gmail.com" style="color:var(--accent);">cmcdevitt167@gmail.com</a></p>
+      <p>We aim to respond to all enquiries within 5 business days.</p>
+    </div>
+
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Pantry Pal &nbsp;·&nbsp; <a href="../index.html">Home</a> &nbsp;·&nbsp; <a href="privacy.html">Privacy Policy</a></p>
+  </footer>
+
+</body>
+</html>
