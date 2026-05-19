@@ -5,6 +5,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Pantry Pal — plan meals, build smart shopping lists, and make the most of every ingredient." />
   <title>Pantry Pal — Meal Planning Made Simple</title>
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Pantry Pal — Meal Planning Made Simple" />
+  <meta property="og:description" content="Plan meals, build smart shopping lists, and make the most of every ingredient." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://pantrypal.app" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Pantry Pal — Meal Planning Made Simple" />
+  <meta name="twitter:description" content="Plan meals, build smart shopping lists, and make the most of every ingredient." />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -66,6 +75,22 @@
       transition: color 0.15s;
     }
     .nav-links a:hover { color: var(--light); }
+    .nav-toggle {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 4px;
+    }
+    .nav-toggle span {
+      display: block;
+      width: 22px;
+      height: 2px;
+      background: var(--white);
+      border-radius: 2px;
+    }
 
     /* ── HERO ── */
     .hero {
@@ -81,7 +106,7 @@
       content: '';
       position: absolute;
       inset: 0;
-      background: url('mango-chopping-board.avif') center / contain no-repeat;
+      background: url('assets/mango-chopping-board.avif') center / contain no-repeat;
       transform: scale(2);
       opacity: 0.7;
       z-index: 0;
@@ -366,7 +391,20 @@
 
     @media (max-width: 600px) {
       .mission-card, .download-box { padding: 36px 24px; }
-      .nav-links { display: none; }
+      .nav-toggle { display: flex; }
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        right: 0;
+        flex-direction: column;
+        background: var(--navy);
+        padding: 16px 24px 24px;
+        gap: 18px;
+        border-top: 1px solid rgba(255,255,255,0.1);
+      }
+      .nav-links.open { display: flex; }
       .hero { min-height: 500px; padding: 48px 16px; }
       .hero-copy { padding: 32px 24px; }
     }
@@ -378,12 +416,15 @@
   <nav>
     <div class="nav-inner">
       <a class="nav-logo" href="#">Pantry Pal</a>
-      <ul class="nav-links">
+      <ul class="nav-links" id="nav-links">
         <li><a href="#mission">Mission</a></li>
         <li><a href="#features">Features</a></li>
         <li><a href="#download">Get the app</a></li>
         <li><a href="#docs">Docs</a></li>
       </ul>
+      <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false" onclick="const l=document.getElementById('nav-links');const o=l.classList.toggle('open');this.setAttribute('aria-expanded',o)">
+        <span></span><span></span><span></span>
+      </button>
     </div>
   </nav>
 
@@ -593,5 +634,13 @@
     </div>
   </footer>
 
+  <script>
+    document.querySelectorAll('.nav-links a').forEach(function(a) {
+      a.addEventListener('click', function() {
+        document.getElementById('nav-links').classList.remove('open');
+        document.querySelector('.nav-toggle').setAttribute('aria-expanded', 'false');
+      });
+    });
+  </script>
 </body>
 </html>
