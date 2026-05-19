@@ -644,6 +644,7 @@
           <p class="waitlist-desc">Pantry Pal is coming to iOS and Android. Drop your email and we'll let you know the moment it's live — no spam, just the launch.</p>
           <form id="waitlist-form" novalidate>
             <div class="waitlist-field">
+              <input type="hidden" name="userGroup" value="Pantry Pal" />
               <label for="waitlist-email" class="visually-hidden">Email address</label>
               <input
                 type="email"
@@ -790,8 +791,51 @@
 
     document.getElementById('waitlist-form').addEventListener('submit', function(e) {
       e.preventDefault();
-      this.hidden = true;
-      document.getElementById('waitlist-success').hidden = false;
+      var form = this;
+      var email = document.getElementById('waitlist-email').value;
+      var btn = form.querySelector('button[type="submit"]');
+      var note = form.querySelector('.waitlist-note');
+
+      // Client-side rate limit matching Loops' own embed behaviour
+      var now = Date.now();
+      var last = localStorage.getItem('loops-form-timestamp');
+      if (last && Number(last) + 60000 > now) {
+        note.textContent = 'Too many signups, please try again in a moment.';
+        note.style.color = '#c0392b';
+        return;
+      }
+      localStorage.setItem('loops-form-timestamp', now);
+
+      btn.disabled = true;
+      btn.textContent = 'Sending…';
+
+      fetch('https://app.loops.so/api/newsletter-form/cmp4nzyq004pb0j023zyu5n3e', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: 'userGroup=' + encodeURIComponent(form.querySelector('[name="userGroup"]').value) + '&mailingLists=&email=' + encodeURIComponent(email)
+      })
+      .then(function(res) {
+        return res.json().then(function(data) { return { ok: res.ok, data: data }; });
+      })
+      .then(function(result) {
+        if (result.ok) {
+          form.hidden = true;
+          document.getElementById('waitlist-success').hidden = false;
+        } else {
+          btn.disabled = false;
+          btn.textContent = 'Notify me';
+          note.textContent = result.data.message || 'Something went wrong. Please try again.';
+          note.style.color = '#c0392b';
+          localStorage.setItem('loops-form-timestamp', '');
+        }
+      })
+      .catch(function() {
+        btn.disabled = false;
+        btn.textContent = 'Notify me';
+        note.textContent = 'Something went wrong. Please try again.';
+        note.style.color = '#c0392b';
+        localStorage.setItem('loops-form-timestamp', '');
+      });
     });
   </script>
 </body>
